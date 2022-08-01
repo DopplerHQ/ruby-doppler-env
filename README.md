@@ -1,6 +1,9 @@
 # doppler-env
 
 The doppler-env gem automates the injection of Doppler secrets as environment variables into any Ruby application and works in the terminal, RubyMine, and Visual Studio Code.
+
+**NOTE: This is not meant to be used in production deployments. For production deployments, we recommend using our [Integrations](https://docs.doppler.com/docs/integrations) or our standard run methods for [Docker](https://docs.doppler.com/docs/dockerfile) and [CLI](https://docs.doppler.com/docs/cli).**
+
 ## Motivation
 
 The Doppler CLI provides the easiest method of injecting secrets into your application:
@@ -28,6 +31,18 @@ gem "doppler-env"
 ```
 
 ## Configuration
+
+### Rails
+
+For Rails applications, all you need to do is require `doppler-env` in your `config/environments/development.rb` file:
+
+```
+require "doppler-env/load"
+```
+
+Make sure it's the first require in that file.
+
+### General
 
 First, require `doppler-env` in your project. Make sure it's required and loaded before any other libraries. To do this you can require the library and manually call `Doppler.load`:
 
