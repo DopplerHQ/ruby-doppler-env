@@ -31,7 +31,7 @@ module DopplerEnv
       ENV[k] ||= v
     end
     log "Secrets loaded successfully:"
-    log "  #{ENV.select{|k,v| k.start_with?("DOPPLER") && k != "DOPPLER_TOKEN"}}"
+    log "  project=#{ENV["DOPPLER_PROJECT"]} config=#{ENV["DOPPLER_CONFIG"]} environment=#{ENV["DOPPLER_ENVIRONMENT"]}"
   end
 
   # loads secrets into ENV, overwriting any variables that already exist
@@ -40,7 +40,7 @@ module DopplerEnv
       ENV[k] = v
     end
     log "Secrets loaded successfully:"
-    log "  #{ENV.select{|k,v| k.start_with?("DOPPLER") && k != "DOPPLER_TOKEN"}}"
+    log "  project=#{ENV["DOPPLER_PROJECT"]} config=#{ENV["DOPPLER_CONFIG"]} environment=#{ENV["DOPPLER_ENVIRONMENT"]}"
   end
 
   # this method expects `doppler setup` to have already been run
