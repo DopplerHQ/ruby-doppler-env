@@ -1,5 +1,5 @@
 # Changelog
 
-## 0.1.0 (July 22, 2022)
+## 0.1.0 (Aug 4, 2022)
 
 - Initial release
